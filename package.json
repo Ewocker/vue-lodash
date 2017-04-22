@@ -11,6 +11,10 @@
     "lodash",
     "wrapper"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ewocker/vue-lodash.git"
+  },
   "author": "Yu-An Lin (Ewocker)",
   "license": "AFL-2.0",
   "peerDependencies": {
