@@ -2,7 +2,7 @@
   "name": "vue-lodash",
   "version": "1.0.3",
   "description": "A small wrapper for integrating lodash into VueJs",
-  "main": "index.js",
+  "main": "dist/vue-lodash.min.js",
   "scripts": {
     "test": "echo \"There is currently no test case for this plugin\" && exit 1"
   },
