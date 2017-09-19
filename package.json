@@ -1,6 +1,6 @@
 {
   "name": "vue-lodash",
-  "version": "1.0.",
+  "version": "1.0.4",
   "description": "A small wrapper for integrating lodash into VueJs",
   "main": "dist/vue-lodash.min.js",
   "scripts": {
