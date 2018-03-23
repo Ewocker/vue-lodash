@@ -27,5 +27,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglifyjs": "^0.6.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5"
   }
 }
