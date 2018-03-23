@@ -7,7 +7,7 @@ Use it when using lodash extensively in lots of file.
 
 Don't use it if just want some simple functions from lodash. (My recommendation is to install individual small function from lodash.)
 
-##For vue-lodash 2.x
+## For vue-lodash 2.x
 ```
 npm install --save vue-lodash
 ```
@@ -37,7 +37,7 @@ this._.random(20)
 ```
 
 
-##For vue-lodash 1.x
+## For vue-lodash 1.x
 ```
 npm install --save lodash vue-lodash
 ```
