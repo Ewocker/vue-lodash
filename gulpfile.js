@@ -1,10 +1,10 @@
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglifyjs');
-const rename = require('gulp-rename');
+const gulp = require('gulp')
+const babel = require('gulp-babel')
+const uglify = require('gulp-uglifyjs')
+const rename = require('gulp-rename')
 
 gulp.task('default', () => {
-  return gulp.src('src/index.js')
+  return gulp.src('src/index.mjs')
     .pipe(babel({
       presets: ['es2015']
     }))
@@ -12,5 +12,5 @@ gulp.task('default', () => {
     .pipe(gulp.dest('dist'))
     .pipe(uglify())
     .pipe(rename('vue-lodash.min.js'))
-    .pipe(gulp.dest('dist'));
-});
+    .pipe(gulp.dest('dist'))
+})

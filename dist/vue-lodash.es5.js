@@ -33,9 +33,8 @@ var VueLodash = {
           return _lodash2.default;
         }
       }));
-    } else {
-      genericInstall(Vue);
     }
+    genericInstall(Vue);
     Vue.mixin({
       mounted: function mounted() {
         // Just tell you that it is mounted

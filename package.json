@@ -4,7 +4,8 @@
   "description": "A small wrapper for integrating lodash into VueJs",
   "main": "dist/vue-lodash.min.js",
   "scripts": {
-    "test": "echo \"There is currently no test case for this plugin\" && exit 1"
+    "test": "node --experimental-modules test/index.mjs",
+    "build": "node_modules/gulp/bin/gulp.js"
   },
   "keywords": [
     "vue",
@@ -26,7 +27,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglifyjs": "^0.6.2",
+    "vue": "^2.6.8"
   },
   "dependencies": {
     "lodash": "^4.17.5"
