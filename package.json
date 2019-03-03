@@ -1,6 +1,6 @@
 {
   "name": "vue-lodash",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A small wrapper for integrating lodash into VueJs",
   "main": "dist/vue-lodash.min.js",
   "scripts": {
@@ -31,6 +31,6 @@
     "vue": "^2.6.8"
   },
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.11"
   }
 }
