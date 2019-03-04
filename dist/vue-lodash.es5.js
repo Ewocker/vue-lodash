@@ -1,24 +1,22 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = _interopRequireDefault(require("lodash"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /* eslint-disable */
-
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var genericInstall = function genericInstall(Vue) {
-  Vue._ = _lodash2.default;
+  Vue._ = _lodash.default;
   Object.defineProperties(Vue.prototype, {
     _: {
       get: function get() {
-        return _lodash2.default;
+        return _lodash.default;
       }
     }
   });
@@ -27,24 +25,25 @@ var genericInstall = function genericInstall(Vue) {
 var VueLodash = {
   install: function install(Vue, options) {
     if (options && options.name) {
-      Vue[options.name] = _lodash2.default;
+      Vue[options.name] = _lodash.default;
       Object.defineProperties(Vue.prototype, _defineProperty({}, options.name, {
         get: function get() {
-          return _lodash2.default;
+          return _lodash.default;
         }
       }));
     }
+
     genericInstall(Vue);
     Vue.mixin({
-      mounted: function mounted() {
-        // Just tell you that it is mounted
+      mounted: function mounted() {// Just tell you that it is mounted
         // console.log('VueLodash');
       }
     });
+
     if (typeof window !== 'undefined' && window.Vue) {
       window.Vue.use(VueLodash);
     }
   }
 };
-
-exports.default = VueLodash;
+var _default = VueLodash;
+exports.default = _default;

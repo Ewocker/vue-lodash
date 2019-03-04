@@ -6,7 +6,7 @@ const rename = require('gulp-rename')
 gulp.task('default', () => {
   return gulp.src('src/index.mjs')
     .pipe(babel({
-      presets: ['es2015']
+      presets: ['@babel/env']
     }))
     .pipe(rename('vue-lodash.es5.js'))
     .pipe(gulp.dest('dist'))
