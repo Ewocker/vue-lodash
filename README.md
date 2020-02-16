@@ -1,6 +1,10 @@
 # vue-lodash
-> A small wrapper for integrating lodash to Vuejs
 
+[![NPM](https://nodei.co/npm/vue-lodash.png?downloadRank=true)](https://nodei.co/npm/vue-lodash/)
+[![Known Vulnerabilities](https://snyk.io/test/github/ewocker/vue-lodash/badge.svg)](https://snyk.io/test/github/ewocker/vue-lodash)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ewocker/vue-lodash/master/LICENSE)
+
+> A small wrapper for integrating lodash to Vuejs
 (Inspired by [vue-axios](https://github.com/imcvampire/vue-axios) plugin)
 
 ## Install
