@@ -1,61 +1,78 @@
 # vue-lodash
-A small wrapper for integrating lodash to Vuejs
-(Inspired by vue-axios plugin by imcvampire)
 
-## When to use it and when not to:
-Use it when using lodash extensively in lots of file.
+[![NPM](https://nodei.co/npm/vue-lodash.png?downloadRank=true)](https://nodei.co/npm/vue-lodash/)
+[![Known Vulnerabilities](https://snyk.io/test/github/ewocker/vue-lodash/badge.svg)](https://snyk.io/test/github/ewocker/vue-lodash)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ewocker/vue-lodash/master/LICENSE)
 
-Don't use it if just want some simple functions from lodash. (My recommendation is to install individual small function from lodash.)
+> A small wrapper for integrating lodash to Vuejs
+(Inspired by [vue-axios](https://github.com/imcvampire/vue-axios) plugin)
 
-## For vue-lodash 2.x
+## Install
+
 ```
-npm install --save vue-lodash
+npm install --save vue-lodash lodash
 ```
 
-And in your entry file:
-```
+## Usage
+
+```javascript
 import Vue from 'vue'
 import VueLodash from 'vue-lodash'
-
-const options = { name: 'lodash' } // customize the way you want to call it
-
-Vue.use(VueLodash, options) // options is optional
-```
-
-#### Usage:
-This wrapper bind `lodash` to `Vue` or `this` if you're using single file component.
-
-You can use `lodash` like this:
-```
-// with name option
-Vue.myCustomName.random(20)
-this.myCustomName.random(20)
-
-// default (it works even with custom name)
-Vue._.random(20)
-this._.random(20)
-```
-
-
-## For vue-lodash 1.x
-```
-npm install --save lodash vue-lodash
-```
-
-And in your entry file:
-```
-import Vue from 'vue'
 import lodash from 'lodash'
+
+// name is optional
+Vue.use(VueLodash, { name: 'custom' , lodash: { map, random } })
+
+new Vue({
+  el: '#app',
+  methods: {
+    test() {
+      console.log(this.lodash.random(20))
+      console.log(this._.random(20))
+      console.log(this.custom.random(20))
+    },
+  }
+})
+console.log(Vue.lodash.random(20))
+console.log(Vue._.random(20))
+console.log(Vue.custom.random(20))
+```
+
+## Typescript
+
+Using __custom name__ with typescript is currently unsupported without casting.
+
+```typescript
+import Vue from 'vue'
 import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
 
-Vue.use(VueLodash, lodash)
+Vue.use(VueLodash, { name: 'custom', lodash: { map, random } })
+
+new Vue({
+  el: '#app',
+  methods: {
+    testLodash() {
+      console.log(this.lodash.random(20))
+      console.log(this._.random(20))
+      console.log((this as any).custom.random(20))
+    },
+  }
+})
+console.log(Vue.lodash.random(20))
+console.log(Vue._.random(20))
+console.log((Vue as any).custom.random(20))
 ```
 
-### Usage:
-This wrapper bind `lodash` to `Vue` or `this` if you're using single file component.
+## Tree shaking with lodash
 
-You can `lodash` like this:
-```
-Vue._.random(20)
-this._.random(20)
+Only import the packages you need, note that lodash tree shaking has to do import with path to module.
+
+```typescript
+import Vue from 'vue'
+import VueLodash from 'vue-lodash'
+import random from 'lodash/random'
+import map from 'lodash/map'
+
+Vue.use(VueLodash, { name: 'custom', lodash: { map, random } })
 ```
