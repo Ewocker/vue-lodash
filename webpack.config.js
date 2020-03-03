@@ -7,7 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist',
     library: 'VueLodash',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    globalObject: 'this' // Bug https://medium.com/@JakeXiao/window-is-undefined-in-umd-library-output-for-webpack4-858af1b881df
   },
   module: {
     rules: [
