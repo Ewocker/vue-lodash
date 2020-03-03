@@ -38,7 +38,7 @@
     module.exports = plugin
   } else if (typeof define == "function" && define.amd) {
     define([], function(){ return plugin })
-  } else if (window.Vue && window.lodash) {
+  } else if (typeof window !== 'undefined' && window.Vue && window.lodash) {
     Vue.use(plugin, window.lodash)
   }
   

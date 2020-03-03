@@ -21,7 +21,7 @@ import VueLodash from 'vue-lodash'
 import lodash from 'lodash'
 
 // name is optional
-Vue.use(VueLodash, { name: 'custom' , lodash: { map, random } })
+Vue.use(VueLodash, { name: 'custom' , lodash: lodash })
 
 new Vue({
   el: '#app',
